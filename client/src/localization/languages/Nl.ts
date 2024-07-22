@@ -1173,7 +1173,7 @@ export const comparisons = {
     translated: 'Stel eerst API-sleutel in',
   },
   com_endpoint_config_key_encryption: {
-    english: 'Your key will be encrypted and deleted at',
+    english: 'Your API key must have the following format: \'username;password\'. Your key will be encrypted and deleted at',
     translated: 'Uw sleutel wordt versleuteld en verwijderd op',
   },
   com_endpoint_config_key_expiry: {

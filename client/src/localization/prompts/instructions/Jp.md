@@ -1272,7 +1272,7 @@ Write a prompt that is mindful of the nuances in the language with respect to it
   - **translated**: API key を入力してください
 
 - **com_endpoint_config_key_encryption**:
-  - **english**: Your key will be encrypted and deleted at
+  - **english**: Your API key must have the following format: \'username;password\'. Your key will be encrypted and deleted at
   - **translated**: 鍵は暗号化されます。削除予定日:
 
 - **com_endpoint_config_key_expiry**:

@@ -64,7 +64,7 @@ function removeUndefined(obj) {
  * If an error occurs, it throws an error with a message indicating that the selected voice is not available
  */
 function openAIProvider(ttsSchema, input, voice) {
-  const url = ttsSchema?.url || 'https://api.openai.com/v1/audio/speech';
+  const url = ttsSchema?.url || 'https://hammer-ki.openai.com/v1/audio/speech';
 
   if (
     ttsSchema?.voices &&

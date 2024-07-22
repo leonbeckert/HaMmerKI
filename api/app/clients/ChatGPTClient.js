@@ -128,9 +128,9 @@ class ChatGPTClient extends BaseClient {
     if (this.options.reverseProxyUrl) {
       this.completionsUrl = this.options.reverseProxyUrl;
     } else if (isChatGptModel) {
-      this.completionsUrl = 'https://api.openai.com/v1/chat/completions';
+      this.completionsUrl = 'https://hammer-api.arana-ai.com/v1/chat/completions';
     } else {
-      this.completionsUrl = 'https://api.openai.com/v1/completions';
+      this.completionsUrl = 'https://hammer-api.arana-ai.com/v1/completions';
     }
 
     return this;
@@ -259,8 +259,8 @@ class ChatGPTClient extends BaseClient {
     }
 
     if (this.useOpenRouter) {
-      opts.headers['HTTP-Referer'] = 'https://librechat.ai';
-      opts.headers['X-Title'] = 'LibreChat';
+      opts.headers['HTTP-Referer'] = 'https://arana-ai.com';
+      opts.headers['X-Title'] = 'Arana AI';
     }
 
     if (this.options.proxy) {

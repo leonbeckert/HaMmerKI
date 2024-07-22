@@ -1145,7 +1145,7 @@ export const comparisons = {
     translated: 'Đặt khóa API trước',
   },
   com_endpoint_config_key_encryption: {
-    english: 'Your key will be encrypted and deleted at',
+    english: 'Your API key must have the following format: \'username;password\'. Your key will be encrypted and deleted at',
     translated: 'Khóa của bạn sẽ được mã hóa và xóa vào lúc',
   },
   com_endpoint_config_key_expiry: {

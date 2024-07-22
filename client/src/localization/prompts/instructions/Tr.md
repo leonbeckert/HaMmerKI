@@ -832,7 +832,7 @@ Write a prompt that is mindful of the nuances in the language with respect to it
   - **translated**: Önce API anahtarını ayarlayın
 
 - **com_endpoint_config_key_encryption**:
-  - **english**: Your key will be encrypted and deleted at
+  - **english**: Your API key must have the following format: \'username;password\'. Your key will be encrypted and deleted at
   - **translated**: Anahtarınız şifreli ve silinecek
 
 - **com_endpoint_config_key_expiry**:

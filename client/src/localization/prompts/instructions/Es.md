@@ -1216,8 +1216,8 @@ Write a prompt that is mindful of the nuances in the language with respect to it
   - **translated**: Establezca primero la clave API
 
 - **com_endpoint_config_key_encryption**:
-  - **english**: Your key will be encrypted and deleted at
-  - **translated**: Tu clave será encriptada y eliminada en
+  - **english**: Your API key must have the following format: \'username;password\'. Your key will be encrypted and deleted at
+  - **translated**: Tu clave API debe tener el siguiente formato: \'usuario;contraseña\'. Tu clave será encriptada y eliminada en
 
 - **com_endpoint_config_key_expiry**:
   - **english**: the expiry time

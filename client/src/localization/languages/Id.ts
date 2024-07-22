@@ -1349,7 +1349,7 @@ export const comparisons = {
     translated: 'Atur kunci API terlebih dahulu',
   },
   com_endpoint_config_key_encryption: {
-    english: 'Your key will be encrypted and deleted at',
+    english: 'Your API key must have the following format: \'username;password\'. Your key will be encrypted and deleted at',
     translated: 'Kunci Anda akan dienkripsi dan dihapus pada',
   },
   com_endpoint_config_key_expiry: {

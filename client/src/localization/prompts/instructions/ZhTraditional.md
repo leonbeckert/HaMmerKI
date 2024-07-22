@@ -760,7 +760,7 @@ Write a prompt that is mindful of the nuances in the language with respect to it
   - **translated**: 請先設定 API 金鑰
 
 - **com_endpoint_config_key_encryption**:
-  - **english**: Your key will be encrypted and deleted at
+  - **english**: Your API key must have the following format: \'username;password\'. Your key will be encrypted and deleted at
   - **translated**: 您的金鑰將被加密並在此到期時間刪除：
 
 - **com_endpoint_config_key_expiry**:

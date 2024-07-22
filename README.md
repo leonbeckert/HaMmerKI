@@ -1,9 +1,9 @@
 <p align="center">
   <a href="https://librechat.ai">
-    <img src="client/public/assets/logo.svg" height="256">
+    <img src="client/public/assets/logo.png" height="256">
   </a>
   <h1 align="center">
-    <a href="https://librechat.ai">LibreChat</a>
+    <a href="https://librechat.ai">built on LibreChat</a>
   </h1>
 </p>
 
@@ -99,34 +99,6 @@ Click on the thumbnail to open the video☝️
 
 ---
 
-## 📝 Changelog
-
-Keep up with the latest updates by visiting the releases page and notes:
-- [Releases](https://github.com/danny-avila/LibreChat/releases)
-- [Changelog](https://www.librechat.ai/changelog) 
-
-**⚠️ Please consult the [changelog](https://www.librechat.ai/changelog) for breaking changes before updating.**
-
----
-
-## ⭐ Star History
-
-<p align="center">
-  <a href="https://star-history.com/#danny-avila/LibreChat&Date">
-    <img alt="Star History Chart" src="https://api.star-history.com/svg?repos=danny-avila/LibreChat&type=Date&theme=dark" onerror="this.src='https://api.star-history.com/svg?repos=danny-avila/LibreChat&type=Date'" />
-  </a>
-</p>
-<p align="center">
-  <a href="https://trendshift.io/repositories/4685" target="_blank" style="padding: 10px;">
-    <img src="https://trendshift.io/api/badge/repositories/4685" alt="danny-avila%2FLibreChat | Trendshift" style="width: 250px; height: 55px;" width="250" height="55"/>
-  </a>
-  <a href="https://runacap.com/ross-index/q1-24/" target="_blank" rel="noopener" style="margin-left: 20px;">
-    <img style="width: 260px; height: 56px" src="https://runacap.com/wp-content/uploads/2024/04/ROSS_badge_white_Q1_2024.svg" alt="ROSS Index - Fastest Growing Open-Source Startups in Q1 2024 | Runa Capital" width="260" height="56"/>
-  </a>
-</p>
-
----
-
 ## ✨ Contributions
 
 Contributions, suggestions, bug reports and fixes are welcome!
@@ -140,3 +112,7 @@ For new features, components, or extensions, please open an issue and discuss be
 <a href="https://github.com/danny-avila/LibreChat/graphs/contributors">
   <img src="https://contrib.rocks/image?repo=danny-avila/LibreChat" />
 </a>
+
+## HaMmerKI
+
+Build with this command `docker-compose -f deploy-compose.yml -f docker-compose.override.yml up --build -d`.

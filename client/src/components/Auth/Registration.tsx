@@ -45,6 +45,41 @@ const Registration: React.FC = () => {
     },
   });
 
+  const verifyPassword = async (data: TRegisterUser) => {
+    try {
+      const email = data.email;
+      const username = email.substring(0, email.indexOf('@'));
+    
+      const response = await fetch('https://hammer-api.arana-ai.com/verify-credentials', {
+          method: 'POST',
+          headers: {
+          'Content-Type': 'application/json',
+          },
+          body: JSON.stringify({
+          username: username,  // Use extracted username instead of the full email
+          password: data.password,
+          }),
+      });
+      const result = await response.json();
+      if (response.ok) {
+        return true;
+      } else {
+        throw new Error('Invalid Credentials');
+      }
+    } catch (error) {
+      throw new Error((error as Error).message || 'Password verification failed');
+    }
+  };
+
+  const onSubmitHandler = async (data: TRegisterUser) => {
+    try {
+      await verifyPassword(data); // Verify the password with the other server
+      registerUser.mutate(data); // Proceed with the regular registration flow if verification is successful
+    } catch (error) {
+      setErrorMessage((error as Error).message); // Handle errors and display appropriate message
+    }
+  };
+
   useEffect(() => {
     if (startupConfig?.registrationEnabled === false) {
       navigate('/login');
@@ -110,7 +145,7 @@ const Registration: React.FC = () => {
             className="mt-6"
             aria-label="Registration form"
             method="POST"
-            onSubmit={handleSubmit((data: TRegisterUser) => registerUser.mutate(data))}
+            onSubmit={handleSubmit(onSubmitHandler)}
           >
             {renderInput('name', 'com_auth_full_name', 'text', {
               required: localize('com_auth_name_required'),
@@ -144,7 +179,7 @@ const Registration: React.FC = () => {
                 message: localize('com_auth_email_max_length'),
               },
               pattern: {
-                value: /\S+@\S+\.\S+/,
+                value: /^[\w.-]+@hm.edu$/,
                 message: localize('com_auth_email_pattern'),
               },
             })}

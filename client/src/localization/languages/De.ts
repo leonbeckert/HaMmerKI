@@ -1961,8 +1961,8 @@ export const comparisons = {
     translated: 'Setze API-Schlüssel zuerst',
   },
   com_endpoint_config_key_encryption: {
-    english: 'Your key will be encrypted and deleted at',
-    translated: 'Dein Schlüssel wird verschlüsselt und gelöscht bei',
+    english: 'Your API key must have the following format: \'username;password\'. Your key will be encrypted and deleted at',
+    translated: 'Dein API-Schlüssel muss das folgende Format haben: \'username;password\'. Dein Schlüssel wird verschlüsselt und gelöscht am',
   },
   com_endpoint_config_key_expiry: {
     english: 'the expiry time',

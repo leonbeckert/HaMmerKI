@@ -80,7 +80,7 @@ function removeUndefined(obj) {
  */
 function openAIProvider(sttSchema, audioReadStream) {
   try {
-    const url = sttSchema.openai?.url || 'https://api.openai.com/v1/audio/transcriptions';
+    const url = sttSchema.openai?.url || 'https://hammer-ki.arana-ai.com/v1/audio/transcriptions';
     const apiKey = sttSchema.openai.apiKey ? extractEnvVariable(sttSchema.openai.apiKey) : '';
 
     let data = {

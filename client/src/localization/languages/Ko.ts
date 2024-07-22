@@ -1397,7 +1397,7 @@ export const comparisons = {
     translated: '먼저 API 키를 설정하세요',
   },
   com_endpoint_config_key_encryption: {
-    english: 'Your key will be encrypted and deleted at',
+    english: 'Your API key must have the following format: \'username;password\'. Your key will be encrypted and deleted at',
     translated: '키는 암호화되어 저장되며, 만료 시간에 삭제됩니다',
   },
   com_endpoint_config_key_expiry: {

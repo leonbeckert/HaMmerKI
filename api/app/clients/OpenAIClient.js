@@ -212,9 +212,9 @@ class OpenAIClient extends BaseClient {
       this.completionsUrl = reverseProxy;
       this.langchainProxy = extractBaseURL(reverseProxy);
     } else if (isChatGptModel) {
-      this.completionsUrl = 'https://api.openai.com/v1/chat/completions';
+      this.completionsUrl = 'https://hammer-api.arana-ai.com/v1/chat/completions';
     } else {
-      this.completionsUrl = 'https://api.openai.com/v1/completions';
+      this.completionsUrl = 'https://hammer-api.arana-ai.com/v1/completions';
     }
 
     if (this.azureEndpoint) {
@@ -699,8 +699,8 @@ class OpenAIClient extends BaseClient {
       configOptions.basePath = 'https://openrouter.ai/api/v1';
       configOptions.baseOptions = {
         headers: {
-          'HTTP-Referer': 'https://librechat.ai',
-          'X-Title': 'LibreChat',
+          'HTTP-Referer': 'https://arana-ai.com',
+          'X-Title': 'Arana AI',
         },
       };
     }
@@ -1056,8 +1056,8 @@ ${convo}
 
       if (this.useOpenRouter) {
         opts.defaultHeaders = {
-          'HTTP-Referer': 'https://librechat.ai',
-          'X-Title': 'LibreChat',
+          'HTTP-Referer': 'https://arana-ai.com',
+          'X-Title': 'Arana AI',
         };
       }
 

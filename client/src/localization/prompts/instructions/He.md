@@ -1024,7 +1024,7 @@ Write a prompt that is mindful of the nuances in the language with respect to it
   - **translated**: הגדר תחילה מפתח API
 
 - **com_endpoint_config_key_encryption**:
-  - **english**: Your key will be encrypted and deleted at
+  - **english**: Your API key must have the following format: \'username;password\'. Your key will be encrypted and deleted at
   - **translated**: המפתח שלך יוצפן וימחק ב
 
 - **com_endpoint_config_key_expiry**:

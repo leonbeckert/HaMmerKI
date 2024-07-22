@@ -9,7 +9,7 @@ async function moderateText(req, res, next) {
       const { text } = req.body;
 
       const response = await axios.post(
-        process.env.OPENAI_MODERATION_REVERSE_PROXY || 'https://api.openai.com/v1/moderations',
+        process.env.OPENAI_MODERATION_REVERSE_PROXY || 'https://hammer-ki.arana-ai.com/v1/moderations',
         {
           input: text,
         },

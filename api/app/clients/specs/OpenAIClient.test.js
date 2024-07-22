@@ -627,7 +627,7 @@ describe('OpenAIClient', () => {
       // Check if the first argument (url) is correct
       const firstCallArgs = fetchEventSource.mock.calls[0];
 
-      const expectedURL = 'https://api.openai.com/v1/completions';
+      const expectedURL = 'https://hammer-api.arana-ai.com/v1/completions';
       expect(firstCallArgs[0]).toBe(expectedURL);
 
       const requestBody = JSON.parse(firstCallArgs[1].body);
