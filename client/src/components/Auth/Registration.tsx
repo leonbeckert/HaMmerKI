@@ -21,7 +21,9 @@ const Registration: React.FC = () => {
   const password = watch('password');
 
   const [errorMessage, setErrorMessage] = useState<string>('');
-  const [countdown, setCountdown] = useState<number>(3);
+  const [warningMessage, setWarningMessage] = useState<string>(''); // To display the verification message
+  const [countdown, setCountdown] = useState<number>(0);
+  const [isLoading, setIsLoading] = useState<boolean>(false);
 
   const registerUser = useRegisterUserMutation({
     onSuccess: () => {
@@ -47,27 +49,33 @@ const Registration: React.FC = () => {
 
   const verifyPassword = async (data: TRegisterUser) => {
     try {
+      setIsLoading(true); // Set loading state to true when starting the verification
+      setWarningMessage('Verifying if credentials are the same as SSO...'); // Show verification message
       const email = data.email;
       const username = email.substring(0, email.indexOf('@'));
     
       const response = await fetch('https://hammer-api.arana-ai.com/verify-credentials', {
-          method: 'POST',
-          headers: {
+        method: 'POST',
+        headers: {
           'Content-Type': 'application/json',
-          },
-          body: JSON.stringify({
-          username: username,  // Use extracted username instead of the full email
+        },
+        body: JSON.stringify({
+          username: username,
           password: data.password,
-          }),
+        }),
       });
       const result = await response.json();
+      setIsLoading(false); // Set loading state to false after the verification response
+      setWarningMessage(''); // Clear verification message
       if (response.ok) {
         return true;
       } else {
         throw new Error('Invalid Credentials');
       }
     } catch (error) {
-      throw new Error((error as Error).message || 'Password verification failed');
+      setIsLoading(false); // Set loading state to false in case of an error
+      setWarningMessage('');
+      throw new Error('Please check your credentials and try again.');
     }
   };
 
@@ -125,21 +133,22 @@ const Registration: React.FC = () => {
           {localize('com_auth_error_create')} {errorMessage}
         </ErrorMessage>
       )}
-      {registerUser.isSuccess && countdown > 0 && (
+      {(isLoading || (registerUser.isSuccess && countdown > 0)) && (
         <div
           className="rounded-md border border-green-500 bg-green-500/10 px-3 py-2 text-sm text-gray-600 dark:text-gray-200"
           role="alert"
         >
-          {localize(
+          {isLoading ? warningMessage : 
+          localize(
             startupConfig?.emailEnabled
               ? 'com_auth_registration_success_generic'
               : 'com_auth_registration_success_insecure',
-          ) +
-            ' ' +
-            localize('com_auth_email_verification_redirecting', countdown.toString())}
+          ) + ' ' +
+          localize('com_auth_email_verification_redirecting', countdown.toString())
+          }
         </div>
       )}
-      {!startupConfigError && !isFetching && (
+      {!startupConfigError && !isFetching && !isLoading && (
         <>
           <form
             className="mt-6"

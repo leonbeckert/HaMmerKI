@@ -2,6 +2,7 @@ import { useLocalize } from '~/hooks';
 import { BlinkAnimation } from './BlinkAnimation';
 import { TStartupConfig } from 'librechat-data-provider';
 import SocialLoginRender from './SocialLoginRender';
+import { LinkedInIcon, GithubIcon } from '~/components';
 import { ThemeSelector } from '~/components/ui';
 import Footer from './Footer';
 
@@ -82,6 +83,19 @@ function AuthLayout({
           )}
         </div>
       </div>
+      
+        {/* Social links container */}
+        <div className="my-8 flex justify-center">
+            <div className="flex items-center space-x-4 rounded-md bg-white p-4">
+                <a href="https://www.linkedin.com/company/arana-ai/" target="_blank" rel="noopener noreferrer">
+                    <LinkedInIcon className="h-8 w-8 text-blue-700 hover:text-blue-800" />
+                </a>
+                <a href="https://github.com/leonbeckert/HaMmerKI" target="_blank" rel="noopener noreferrer">
+                    <GithubIcon className="h-8 w-8 text-gray-700 hover:text-gray-800" />
+                </a>
+            </div>
+        </div>
+
       <Footer startupConfig={startupConfig} />
     </div>
   );

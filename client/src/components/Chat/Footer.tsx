@@ -44,10 +44,10 @@ export default function Footer({ className }: { className?: string }) {
   const mainContentParts = (
     typeof config?.customFooter === 'string'
       ? config.customFooter
-      : '[HaMmerKI ' +
+      : 'HaMmerKI ' +
         Constants.VERSION +
-        '](https://arana-ai.com - ' +
-        localize('com_ui_latest_footer')
+        ' by [Arana AI](https://www.linkedin.com/company/arana-ai/) - ' +
+        'Contribute on GitHub ❤️ [UI](https://github.com/leonbeckert/HaMmerKI) [API](https://github.com/leonbeckert/HaMmerAPI)'
   ).split('|');
 
   const mainContentRender = mainContentParts.map((text, index) => (
